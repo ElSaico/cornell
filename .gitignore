@@ -1,0 +1,6 @@
+*~
+*.swp
+cornell
+
+/target
+**/*.rs.bk
