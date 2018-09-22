@@ -4,3 +4,9 @@ version = "0.1.0"
 authors = ["Bruno Marques <bruno@bmarques.net>"]
 
 [dependencies]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
