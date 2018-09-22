@@ -2,22 +2,23 @@
 #![cfg_attr(not(test), no_main)]
 #![cfg_attr(test, allow(dead_code, unused_macros, unused_imports))]
 
-use core::panic::PanicInfo;
-
 #[macro_use]
 extern crate cornell;
+
+use core::panic::PanicInfo;
+use cornell::halt_qemu;
 
 #[cfg(not(test))]
 #[panic_handler]
 #[no_mangle]
 pub fn panic(_info: &PanicInfo) -> ! {
-    println!("{}", _info);
+    serial_println!("ok");
+    unsafe { halt_qemu() }
     loop {}
 }
 
 #[cfg(not(test))]
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    println!("Hello World!");
-    loop {}
+    panic!();
 }
