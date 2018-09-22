@@ -1,6 +1,8 @@
 #![no_std]
 #![no_main]
 
+extern crate bootloader_precompiled;
+
 use core::panic::PanicInfo;
 
 #[panic_handler]

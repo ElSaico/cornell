@@ -1,6 +1,7 @@
 *~
 *.swp
-cornell
+.idea
+*.iml
 
 /target
 **/*.rs.bk
